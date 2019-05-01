@@ -1,0 +1,32 @@
+    
+    /* #437c90, #ffd166, #255957, #eeebd3, #276087 #75b09c #a0ca92 
+     #d8f793 #ffd573 #cfa505 #40798c #cc5803 #e2711d #cfa505*/
+
+.circle {
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 3px #ffd166;
+    cursor: pointer;
+    height: 16px;
+    margin-bottom: 10px;
+    opacity: .4;
+    position: relative;
+    display: inline-block;
+    margin: 15px 5px;
+    width: 16px;
+    box-sizing: border-box;
+    z-index: 499;
+  }
+
+  .circle:hover {
+      transform: scale(1.1);
+      box-shadow: inset 0 0 0 8px white;
+      z-index: 500;
+
+  }
+
+  .position__circle {
+    left: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }

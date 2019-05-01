@@ -1,5 +1,14 @@
+body {
+  /* background: linear-gradient(to top left, rgb(0, 0, 0, 0.7),rgb(66, 54, 54, 0.4)), url(./assets/img/blue.jpg); */
+  background: linear-gradient(to top left, rgb(0, 0, 0, 0.7),rgb(66, 54, 54, 0.4)), url(./assets/img/blue.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  height: 100%;
+}
+
 .App {
-  text-align: center;
+  margin: 0;
 }
 
 .App-logo {
