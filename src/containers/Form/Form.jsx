@@ -35,12 +35,15 @@ class AddLinkForm extends Component {
         return (
             <div className="form-container">
              <form className="add-form" onSubmit={this.handleSubmit}>
+             <div className="form-header">
+                <p>Add Content Link</p>
                 <button 
                     className="close-button"
                     type="button"
                     onClick={onClose}>
                 X
                 </button>
+            </div>
                 <div className="form-line">
                     <label htmlFor="form-owner-input">Owner</label>
                 </div>
@@ -50,19 +53,19 @@ class AddLinkForm extends Component {
                         value={owner} 
                         ype="text" 
                         id="form-owner-input"
-                        size={42}
+                        size={46}
                         autoComplete="off"
                         onChange={this.handleChange}/>
                 </div>
                 <label
-                    htmlFor='recipe-description-input'
+                    htmlFor='description-input'
                     style={{marginTop: '5px'}}
                 >
                 Description
                 </label>
                 <textarea
                     key='description'
-                    id='recipe-description-input'
+                    id='description-input'
                     type='Description'
                     name='description'
                     rows='4'
@@ -79,7 +82,7 @@ class AddLinkForm extends Component {
                         value={url} 
                         ype="text" 
                         id="form-url-input"
-                        size={42}
+                        size={46}
                         autoComplete="off"
                         onChange={this.handleChange}/>
                 </div> 
@@ -87,7 +90,7 @@ class AddLinkForm extends Component {
                     type="submit"
                     className="buttons"
                     style={{alignSelf: 'flex-end', marginRight: 0}}>
-                    SAVE
+                    ADD
                 </button>       
             </form>
             </div>
