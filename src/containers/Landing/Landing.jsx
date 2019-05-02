@@ -5,6 +5,7 @@ import Icons from '../../components/Icons/Icons';
 import Cards from '../../containers/Cards/Cards';
 
 import './Landing.css';
+import AddLinkForm from '../Form/Form';
 
 const landing = ( props ) => (
     <div className="container">
@@ -34,6 +35,10 @@ const landing = ( props ) => (
         <section className="cards">
             <Cards />
         </section>
+        <section className="form">
+            <AddLinkForm />
+        </section>
+
         <footer>
         </footer>
     </div>

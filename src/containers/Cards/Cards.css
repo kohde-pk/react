@@ -1,6 +1,4 @@
    
-    /* #437c90, #ffd166, #255957, #eeebd3, #276087 #75b09c #a0ca92 
-     #d8f793 #ffd573 #cfa505 #40798c #cc5803 #e2711d #cfa505*/
 
 .card__group {
     display: grid;
@@ -12,15 +10,16 @@
     background-color: #cfa505;
     margin-top: 140px;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
+    height: 300px;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     margin: 10%;
-    font-family: 'Russo One', sans-serif;
-    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
     font-size: 1.em;
     color: black;
     width: 250px;
@@ -31,15 +30,21 @@
     margin: 20px;
     border-radius: 5px;
     box-shadow: 3px 3px 6px black;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    user-select: none;
 }
 
 .card:hover {
     transform: scale(1.1);
+    backface-visibility: hidden; 
+    perspective: 1;  
+    -webkit-filter: blur(0);
+    filter: blur(0);
     background-image: linear-gradient(to right, #efe2cf, #c3b8a7);
 }
 
 .header {
+    font-family: 'Russo One', sans-serif;
     font-size: .8rem;
     padding: 10px;
     background-image: linear-gradient(to right, #753742, #000);
@@ -70,7 +75,7 @@ i.card__icon {
 
 .main__url>a {
     color: black;
-    font-family: 'open sans', sans-serif;
+    font-family: -apple-system, system-ui, 'Rubik';
     text-decoration: none;
     text-align: center;
 }

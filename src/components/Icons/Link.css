@@ -1,0 +1,36 @@
+
+.link__wrapper {
+    position: relative;
+    top: -15px;
+    left: 200px;
+    width: 40px;
+    height: 40px;
+    z-index: 1000;
+    border-radius: 50%;
+    /* border: 1px solid #2e4057; */
+    background-image: linear-gradient(to left, #2e4057, #99c24d);
+    /* box-shadow: 3px 3px 6px black; */
+}
+.link__wrapper:hover {
+    animation: turn 15s;
+    backface-visibility: hidden;
+}
+
+.link__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1px;
+    backface-visibility: hidden;
+    color: white; 
+}
+
+@keyframes turn {
+from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

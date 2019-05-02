@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import propTypes from 'prop-types';
 
 import './Cards.css';
+import Link from '../../components/Icons/Link';
 // import * as data from '../../assets/json/cards.json';
 
 const loadData = {
@@ -55,8 +56,8 @@ class Card extends Component {
             
             <div className="card__group">
                 <div className="card card__item">
-                    <div className="header">Posted by: {owner}
-                        <i className={`card__icon ${icon}`}></i></div>
+                    <div className="header">Posted by: {owner}</div>
+                        <Link />
                     <div className="main__content">{description}
                         <div className="main__url">
                         <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
