@@ -1,0 +1,156 @@
+@import "../../App.scss";
+
+
+section.content-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-gap: 20px;
+    justify-content: center;
+    align-content: center;
+    margin: 5rem auto;
+    
+    .card {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4fr 3fr 3fr;
+        grid-gap: 0;
+    }
+
+    .card {
+        font-family: 'Work Sans', serif;
+        color: black;
+        background-color: #ffffff;
+        color: black;
+        min-width: 300px;
+        min-height: 250px;
+        max-width: 300px;
+        max-height: 250px;
+        @include shadow-3px();
+        border: none;
+    }
+    
+    .card-header {
+        background-image: url(../../assets/img/blue.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    div.card-header:nth-of-type(4n) {
+        background-image: url(../../assets/img/desk.jpg);
+    }
+    div.card-header:nth-of-type(2n) {
+        background-image: url(../../assets/img/water.jpg);
+    }
+    div.card-header:nth-of-type(3n) {
+        background-image: url(../../assets/img/blue.jpg);
+    }
+
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        margin: auto 5px
+    }
+
+    .content-title {
+        font-size: .9rem;
+        justify-self: flex-start; //left 
+        align-self: flex-start; //top
+        line-height: 1;
+    }
+
+    .content-type {
+        font-size: .9rem;
+        color: $light-text-color; 
+    }
+    
+    .card-footer {
+        // position: absolute;
+        font-size: .7rem;
+        color: black;
+        position: relative;
+        padding: 5px;
+        margin-bottom: -5px;
+    }
+    
+    .card-footer {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        border: none;
+    }
+    
+    .card-footer .content-owner {
+        margin-bottom: 5px;
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+        justify-self: flex-start;
+        align-self: flex-start;
+        font-size: .9rem;
+        
+    }
+    .card-footer .date-added {
+        margin-bottom: 1px;
+        margin-top: 5px;
+        grid-column: 1 / 2;
+        grid-row: 1 / 1;
+        justify-self: flex-start;
+        align-self: flex-end;
+    }
+    .time-read {
+        grid-column: 1 / 1;
+        grid-row: 2 / 2;
+        justify-items: flex-end;
+        justify-self: flex-start;
+        align-self: flex-end;
+        margin-bottom: 1px;
+    }
+    .view-icon {
+        grid-column: 2 / 2;
+        grid-row: 2 / 2;
+        justify-items: flex-start;
+        align-self: flex-end;
+    }
+    
+    .initials {
+        display: inline-block;
+        margin: 5px;
+        padding: 0;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: #880d1e;
+        color: white;
+        justify-items: flex-start;
+        align-self: flex-end;
+    }
+    
+    .initials p {
+        font-family: 'Libre Baskerville', sans-serif;
+        font-size: 1.5rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .content-card i.view-icon {
+        color: #0b4f6c;
+        transition: all .5s;
+        justify-self: flex-end;
+        align-self: flex-end;
+    }
+    .view-icon:hover {
+        color: #880d1e;
+    }
+
+    i,
+    .views {
+        display: inline;
+        justify-self: flex-end;
+        align-self: flex-end;
+    }
+
+    i {
+        margin: 0 3px 3px 0;
+        padding: 0;
+    }
+
+}

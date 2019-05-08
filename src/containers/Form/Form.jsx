@@ -1,98 +1,163 @@
 
 import React, { Component } from 'react';
 
-import './Form.css';
+import '../../App.scss';
+import './Form.scss';
 
 class AddLinkForm extends Component {
 
     static defaultProps = {
-        onClose() {}
+       views: 0,
+       onSave() {}
     }
     constructor(props) {
         super(props);
         this.state = {
             owner: '',
-            description: "",
-            url: '',
-            views: 0,
-            lastView: ''
+            title: '',
+            contentType: '',
+            content: "",
+            timeToRead: '',
+            timeToReadUnit: '',
+            contentDate: '',
+            url: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     handleChange(event) {
         this.setState({[event.target.name]: event.target.value});
     }
+
+    handleReset(event) {
+        event.preventDefault();
+        this.setState({
+            owner: '',
+            title: '',
+            contentType: '',
+            content: "",
+            timeToRead: '',
+            timeToReadUnit: '',
+            contentDate: '',
+            url: ''
+        })
+    }
     handleSubmit(event) {
         event.preventDefault();
+        this.props.onSave({...this.state});
+        this.setState({
+            owner: '',
+            title: '',
+            contentType: '',
+            content: "",
+            timeToRead: '',
+            timeToReadUnit: '',
+            contentDate: '',
+            url: ''
+        })
     }
+    
     render() {
-        const {owner, description, url, views, lastView} = this.state;
-        const {onClose} = this.props;
+        const {owner, title, contentType, content, timeToRead, timeToReadUnit, url, contentDate} = this.state;
 
         return (
             <div className="form-container">
              <form className="add-form" onSubmit={this.handleSubmit}>
-             <div className="form-header">
-                <p>Add Content Link</p>
-                <button 
-                    className="close-button"
-                    type="button"
-                    onClick={onClose}>
-                X
-                </button>
-            </div>
-                <div className="form-line">
-                    <label htmlFor="form-owner-input">Owner</label>
+                <div className="form-header">
+                    <p>Add an Article</p>
                 </div>
-                <div>
-                    <input 
-                        key="owner" 
-                        value={owner} 
-                        ype="text" 
-                        id="form-owner-input"
-                        size={46}
-                        autoComplete="off"
-                        onChange={this.handleChange}/>
-                </div>
-                <label
-                    htmlFor='description-input'
-                    style={{marginTop: '5px'}}
-                >
-                Description
-                </label>
-                <textarea
-                    key='description'
-                    id='description-input'
-                    type='Description'
-                    name='description'
-                    rows='4'
-                    cols='40'
-                    autoComplete='off'
-                    value={description}
-                    onChange={this.handleChange}/>
-                <div className="form-line">
-                    <label htmlFor="form-url-input">Link to content:</label>
-                </div>
-                <div>
-                    <input 
-                        key="url" 
-                        value={url} 
-                        ype="text" 
-                        id="form-url-input"
-                        size={46}
-                        autoComplete="off"
-                        onChange={this.handleChange}/>
-                </div> 
-                <button
-                    type="submit"
-                    className="buttons"
-                    style={{alignSelf: 'flex-end', marginRight: 0}}>
-                    ADD
-                </button>       
-            </form>
+                    <div>
+                        <input 
+                            key="owner" 
+                            name="owner"
+                            type="text" 
+                            id="form-owner-input"
+                            size={60}
+                            autoComplete="on"
+                            placeholder="*Owner Name"
+                            value={this.state.owner}
+                            onChange={this.handleChange}
+                            required/>
+                    </div>
+                    <div>
+                        <input 
+                            key="title" 
+                            name="title"
+                            type="text" 
+                            id="form-title-input"
+                            size={100}
+                            autoComplete="off"
+                            placeholder="*Content Title"
+                            value={this.state.title}
+                            onChange={this.handleChange}
+                            required/>
+                    </div>
+                    <div className="form-line">
+                        <label htmlFor="form-title-input">*Time to Read:</label>
+                        <input 
+                            key="timeToRead"
+                            name="timeToRead"
+                            type="number" 
+                            min="0"
+                            max="59"
+                            id="form-read-input"
+                            autoComplete="off"
+                            required
+                            value={this.state.timeToRead}
+                            onChange={this.handleChange}/>
+                    </div>
+                    <div className="form-line">
+                        <label htmlFor="form-image-input">Image to Display:</label>
+                        <select
+                            key="image"
+                            name="image"
+                            id="form-image"
+                            value={this.state.image}
+                            onChange={this.handleChange}
+                            required>
+                                <option value="https://media.giphy.com/media/xUOxf9lJKcBDrE6qmk/giphy.gif">Refresh</option>
+                                <option value="https://media.giphy.com/media/3rgXBETfAu65Gw6jwA/giphy.gif">Switch On/Off</option>
+                                <option value="https://media.giphy.com/media/l46Cy1rHbQ92uuLXa/giphy.gif">Laptop</option>
+                        </select>
+                    </div>
+                    <label
+                        htmlFor='content-input'
+                        style={{marginTop: '5px'}}>
+                    *Content:
+                    </label>
+                    <textarea
+                        key='content'
+                        name='content'
+                        id='content-input'
+                        name='content'
+                        rows='16'
+                        cols='150'
+                        spellCheck='true'
+                        autoComplete='off'
+                        placeholder="Where you add your text"
+                        value={this.state.content}
+                        onChange={this.handleChange}
+                        required/>
+                    <div className="button-container">
+                        <button
+                            type="button"
+                            value="Reset"
+                            className="buttons"
+                            onClick={this.handleReset}
+                            style={{alignSelf: 'flex-end', marginRight: '10px'}}>
+                            RESET
+                        </button> 
+                        <button
+                            type="submit"
+                            className="buttons"
+                            style={{alignSelf: 'flex-end', marginRight: '10px'}}>
+                            ADD
+                        </button>       
+                    </div>
+                </form>
             </div>
         )
     }

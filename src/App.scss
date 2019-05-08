@@ -1,0 +1,58 @@
+// Colors
+
+$bg-color: #fff;
+$main-text-color: #000;
+$accent-color: #880d1e;
+$light-text-color: #fff;    
+$secondary-text-color: #0b4f6c;
+$bg-field-color: #f7f4f4;
+$secondary-color: #5d5d5d;
+$border-color: #c2bfbf;
+$border-shadow-color: #5d5d5d;
+
+// Mixins
+
+@mixin shadow-all-around {
+    box-shadow: 0 0 3rem $border-shadow-color;
+}
+
+@mixin shadow-3px {
+    box-shadow: 3px 3px 6px $border-shadow-color;
+}
+
+@mixin shadow-1px {
+    box-shadow: 1px 1px 6px $border-shadow-color;
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absCenterV {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-35%);
+}
+
+@mixin absCenterH {
+  top: 50%;
+  transform: translateY(50%);
+}
+
+// Other
+
+body {
+  background-color: white;
+  height: 100%;
+  font-family: 'Roboto Slab', serif;
+  font-family: 'Cinzel', serif;
+  font-family: 'Pridi', serif;
+  font-weight: 700;
+}
+
+.App {
+  margin: 0;
+}

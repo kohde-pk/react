@@ -10,7 +10,7 @@ const loadData = {
         {
             "id": 1, 
             "owner":"Kathleen", 
-            "description": "This is a link to my portfolio",
+            "content": "This is a link to my portfolio",
             "icon": "fas fa-link fa-1x",
             "url": "https://kohde-pk.github.io/ui",
             "views": "2",
@@ -19,7 +19,7 @@ const loadData = {
         {
             "id": 2, 
             "owner":"Kathleen", 
-            "description": "My favorite search engine",
+            "content": "My favorite search engine",
             "icon": "fas fa-cloud fa-1x",
             "url": "https://google.com",
             "views": "14",
@@ -28,7 +28,7 @@ const loadData = {
         {
             "id": 3, 
             "owner":"Ninod", 
-            "description": "View our most recent customer site",
+            "content": "View our most recent customer site",
             "icon": "fas fa-link fa-1x",
             "url": "https://google.com",
             "views": "10",
@@ -44,21 +44,20 @@ console.log(fData);
 class Card extends Component {
     static propTypes = {
         owner: propTypes.string.isRequired,
-        description: propTypes.string.isRequired,
-        icon: propTypes.string.isRequired,
-        url: propTypes.string.isRequired,
-        views: propTypes.string.isRequired,
-        lastView: propTypes.string.isRequired
+        title: propTypes.string.isRequired,
+        content: propTypes.string.isRequired,
+        timeToRead: propTypes.string.isRequired,
+        image: propTypes.string.isRequired
     }
     render() {
-        const {id, owner, description, icon, url, views, lastView} = this.props;
+        const {id, owner, content, icon, url, views, lastView} = this.props;
         return (
             
             <div className="card__group">
                 <div className="card card__item">
                     <div className="header">Posted by: {owner}</div>
                         <Link />
-                    <div className="main__content">{description}
+                    <div className="main__content">{content}
                         <div className="main__url">
                         <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
                         </div>

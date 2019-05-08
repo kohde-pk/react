@@ -1,0 +1,112 @@
+@import "../../App.scss";
+
+* {
+    font-family: 'Roboto Slab', serif;
+}
+.add-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 60px 0;
+    padding: 15px;
+    background-color: $bg-color;
+    border: 1px solid $secondary-color;
+    @include shadow-all-around();
+}
+
+.add-form input[type=text],
+textarea {
+    padding: 5px 8px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid $border-color;
+}
+
+textarea:required {
+    outline: none;
+}
+
+input {
+    margin: 10px;
+}
+
+input[type=number] {
+    width: 45px;
+}
+
+select {
+    margin-left: 5px;
+}
+
+option {
+    border-radius: 0;
+    border: 1px solid $border-color;
+}
+
+.form-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.form-line:not(:first-child) {
+    margin-top: 10px;
+}
+
+.form-line input {
+    margin-left: 15px;
+}
+
+.buttons {
+    color: $main-text-color;
+    background-color: $bg-color;
+    padding: 0 10px 1px 10px;
+    margin: 20px 0 8px 0;
+    font-family: 'Pridi', serif;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid $border-shadow-color;
+    transition: all .25s;
+    
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+button:hover {
+    background-color: $accent-color;
+    color: $light-text-color;
+    box-shadow: 3px 3px 6px $border-shadow-color;
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 1px 1px 3px $border-shadow-color;
+}
+  
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+div.form-header {
+    color: $secondary-text-color;
+    font-family: 'Pridi', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 2px $border-shadow-color;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+  
+div.form-header>p {
+      align-self: flex-start;
+  }
