@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Circles.css';
+import './Circles.scss';
 
 const circles = () => (
     <div className="container">

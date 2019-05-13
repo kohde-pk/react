@@ -1,4 +1,3 @@
-// Colors
 
 $bg-color: #fff;
 $main-text-color: #000;
@@ -7,8 +6,11 @@ $light-text-color: #fff;
 $secondary-text-color: #0b4f6c;
 $bg-field-color: #f7f4f4;
 $secondary-color: #5d5d5d;
+$second-accent:#6393D2;
 $border-color: #c2bfbf;
 $border-shadow-color: #5d5d5d;
+$menu-hover: #FE6D34;
+$menu-hover-2: #84c318;
 
 // Mixins
 
@@ -22,6 +24,12 @@ $border-shadow-color: #5d5d5d;
 
 @mixin shadow-1px {
     box-shadow: 1px 1px 6px $border-shadow-color;
+}
+@mixin shadow-form-btn {
+    box-shadow: 1px 1px 1px $border-shadow-color;
+}
+@mixin shadow-form {
+    box-shadow: 0 0 6px $border-shadow-color;
 }
 
 @mixin absCenter {

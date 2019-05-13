@@ -1,9 +1,7 @@
-
-{
-            "items": [
+[
                 {
                     "id": 0, 
-                    "image": "backgroundImage: url(../../assets/img/office.jpg)",
+                    "image": "../../assets/img/office.jpg",
                     "title": "Portfolio site", 
                     "owner":"Kathleen", 
                     "content": "View our most recent customer site",
@@ -14,18 +12,18 @@
                 },
                 {
                     "id": 1,
-                    "image": "backgroundImage: url(../../assets/img/water.jpg)",
+                    "image": "../../assets/img/water.jpg",
                     "title": "Continuous Integration and Continuous Delivery for Database Changes", 
                     "owner":"Ashoke Bhowmick", 
-                    "content": " The article also recommends some processes that help in overcoming this bottleneck and allow streamlining application code delivery and database changes into a single delivery pipeline.",
+                    "content": "The article also recommends some processes that help in overcoming this bottleneck and allow streamlining application code delivery and database changes into a single delivery pipeline.",
                     "views": "0",
-                    "timeToRead": "15",
+                    "timeToRead": "13",
                     "dateAdded": "05/03/2019",
                     "dateCreated": "12/12/2018"
                 },
                 {
                     "id": 2,
-                    "image": "backgroundImage: url(../../assets/img/desk.jpg)",
+                    "image": "../../assets/img/desk.jpg",
                     "title": "Digital Twins", 
                     "owner":"Rohit Kumar", 
                     "content": "In this paper we are going to explain about digital twins, it’s usage and how it works",
@@ -36,9 +34,9 @@
                 },
                 {
                     "id": 3,
-                    "image": "backgroundImage: url(../../assets/img/office.jpg)",
+                    "image": "../../assets/img/office.jpg",
                     "title": "Setting up environment for performance testing", 
-                    "contentType": "Link",
+                    "owner": "Sumit Kumar",
                     "content": "In this paper, we will discuss the challenges faced while the preparation of accurate test environment, tips for preparing accurate test environment, different test environment options, test environment validation checklist and some troubleshooting techniques.",
                     "views": "0",
                     "timeToRead": "15",
@@ -47,7 +45,7 @@
                 },
                 {
                     "id": 4,
-                    "image": "backgroundImage: url(../../assets/img/ink.jpg)",
+                    "image": "../../assets/img/ink.jpg",
                     "title": "SOA on Blockchain", 
                     "owner":"Santosh Patil", 
                     "content": "Organizations which value security, privacy, transparency and preservation of asset value should see the Blockchain as a critical component of their application portfolios as they move into these uncertain times.  ",
@@ -57,4 +55,3 @@
                     "dateCreated": "12/12/2018"
                 }
             ]
-}

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 import '../../App.scss';
 import './Form.scss';
+import axios from '../../axios';
 
 class AddLinkForm extends Component {
 
@@ -13,14 +14,15 @@ class AddLinkForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            owner: '',
+            id: '',
+            image: 'https://media.giphy.com/media/3ohhwxWDV25DWpgleU/giphy.gif',
             title: '',
-            contentType: '',
+            owner: '',
             content: "",
+            views: '',
             timeToRead: '',
-            timeToReadUnit: '',
-            contentDate: '',
-            url: ''
+            dateAdded: '',
+            dataCreated: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -32,36 +34,54 @@ class AddLinkForm extends Component {
         this.setState({[event.target.name]: event.target.value});
     }
 
+    handleSave(data) {
+        this.setState((prevState, props) => {
+            // const newData = {...data};
+            return {
+                items: [...this.state.items]
+            }
+        });
+    }
+
     handleReset(event) {
         event.preventDefault();
         this.setState({
-            owner: '',
+            image: '',
             title: '',
-            contentType: '',
+            owner: '',
             content: "",
-            timeToRead: '',
-            timeToReadUnit: '',
-            contentDate: '',
-            url: ''
+            timeToRead: ''
         })
     }
     handleSubmit(event) {
         event.preventDefault();
-        this.props.onSave({...this.state});
+        const record = {
+            id: new Date().valueOf(),   
+            content: this.state.content,
+            dateAdded: new Date(),
+            dateCreated: this.state.dataCreated.slice(0, 10),
+            image: this.state.image,
+            owner: this.state.owner,
+            timeToRead: this.state.timeToRead,
+            title: this.state.title,
+            views: 0
+        }
+
+        axios.post('/content.json', record)
+            .then(response => console.log('response'))
+            .catch(console.log(record));
+
         this.setState({
-            owner: '',
+            image: '',
             title: '',
-            contentType: '',
+            owner: '',
             content: "",
-            timeToRead: '',
-            timeToReadUnit: '',
-            contentDate: '',
-            url: ''
+            timeToRead: ''
         })
     }
     
     render() {
-        const {owner, title, contentType, content, timeToRead, timeToReadUnit, url, contentDate} = this.state;
+        // const {owner, title, contentType, content, timeToRead, timeToReadUnit, url, contentDate} = this.state;
 
         return (
             <div className="form-container">
@@ -118,9 +138,15 @@ class AddLinkForm extends Component {
                             value={this.state.image}
                             onChange={this.handleChange}
                             required>
-                                <option value="https://media.giphy.com/media/xUOxf9lJKcBDrE6qmk/giphy.gif">Refresh</option>
-                                <option value="https://media.giphy.com/media/3rgXBETfAu65Gw6jwA/giphy.gif">Switch On/Off</option>
+                                <option value="https://media.giphy.com/media/3og0Ix8tq5zyKybM9a/giphy.gif">Beach</option>
+                                <option value="https://media.giphy.com/media/LHZyixOnHwDDy/giphy.gif">Cat Typing</option>
+                                <option value="https://media.giphy.com/media/26ybvRzJrDKvVl8R2/giphy.gif">Desk</option>
                                 <option value="https://media.giphy.com/media/l46Cy1rHbQ92uuLXa/giphy.gif">Laptop</option>
+                                <option value="https://media.giphy.com/media/xUOxf9lJKcBDrE6qmk/giphy.gif">Refresh</option>
+                                <option value="https://media.giphy.com/media/3o7aCVTfelG4XSbv3y/giphy.gif">Sailboat</option>
+                                <option value="https://media.giphy.com/media/3rgXBETfAu65Gw6jwA/giphy.gif">Switch On/Off</option>
+                                <option value="https://media.giphy.com/media/gz945ghj1zMyI/giphy.gif">USB</option>
+                                <option value="https://media.giphy.com/media/hEWzGqKLNEs4E/giphy.gif">WiFi</option>
                         </select>
                     </div>
                     <label
@@ -132,9 +158,8 @@ class AddLinkForm extends Component {
                         key='content'
                         name='content'
                         id='content-input'
-                        name='content'
                         rows='16'
-                        cols='150'
+                        cols='120'
                         spellCheck='true'
                         autoComplete='off'
                         placeholder="Where you add your text"

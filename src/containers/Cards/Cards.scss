@@ -1,4 +1,4 @@
-   
+@import "../../App.scss";   
 
 .card__group {
     display: grid;
@@ -14,25 +14,27 @@
     height: 300px;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    margin: 10%;
-    font-family: 'Rubik', sans-serif;
-    font-weight: 600;
-    font-size: 1.em;
-    color: black;
-    width: 250px;
-    height: 250px;
-    /* background-image: linear-gradient(to right, #e2e0ce, #c7c5b5); */
-    background-image: linear-gradient(to right, #fffaf4, #eee0cb);
-    /* background-color: #e2e0ce; */
-    margin: 20px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 6px black;
-    transition: all 0.5s ease-in-out;
-    user-select: none;
-}
+// .card {
+//     display: flex;
+//     display: -ms-flexbox;
+//     flex-direction: column;
+//     -ms-flex-direction: column;
+//     margin: 10%;
+//     font-family: 'Rubik', sans-serif;
+//     font-weight: 600;
+//     font-size: 1em;
+//     color: black;
+//     width: 250px;
+//     height: 250px;
+//     /* background-image: linear-gradient(to right, #e2e0ce, #c7c5b5); */
+//     background-image: linear-gradient(to right, #fffaf4, #eee0cb);
+//     /* background-color: #e2e0ce; */
+//     margin: 20px;
+//     border-radius: 5px;
+//     box-shadow: 3px 3px 6px black;
+//     transition: all 0.5s ease-in-out;
+//     user-select: none;
+// }
 
 .card:hover {
     transform: scale(1.1);
@@ -40,7 +42,6 @@
     perspective: 1;  
     -webkit-filter: blur(0);
     filter: blur(0);
-    background-image: linear-gradient(to right, #efe2cf, #c3b8a7);
 }
 
 .header {
@@ -107,4 +108,48 @@ i.card__icon {
     flex: 1;
     margin: auto 0;
     text-align: right;
+}
+
+// card list
+
+.list {
+    padding: 15px;
+    width: 40%;
+    margin: 15px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px #ccc;
+}
+
+.list-thumb {
+    width: 40px;
+    display: inline-block;
+}
+.list-title {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.list-header {
+    font-size: 1.6rem;
+    padding: 0 15px;
+    color: $accent-color;
+}
+
+.list-author {
+    font-size: .8rem;
+    
+}
+
+.list-id {
+    display: inline-block;
+    padding: 0 15px 0 0; 
+}
+
+.list-button {
+    display: block;
+    padding: 5px;
+    background: white;
+    border: 1px solid black;
+    color: black;
+    box-shadow: 1px 1px 1px #ccc;
 }

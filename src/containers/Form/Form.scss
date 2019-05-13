@@ -12,7 +12,7 @@
     padding: 15px;
     background-color: $bg-color;
     border: 1px solid $secondary-color;
-    @include shadow-all-around();
+    @include shadow-form();
 }
 
 .add-form input[type=text],
