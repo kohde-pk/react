@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import base from './base';
 
 import Landing from './containers/Landing/Landing';
 import AddLinkForm from './containers/Form/Form';
@@ -17,7 +18,7 @@ function App() {
       <Route path="/add" component={AddLinkForm} />
       <Route path="/content" component={ContentCard} />
       <Route path="/cardList" component={Cards} />
-      <Route path="/" exact component={Landing} />
+      <Route exact path="/"  component={Landing} />
     </Switch>
 
     </div>

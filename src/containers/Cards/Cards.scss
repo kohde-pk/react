@@ -14,28 +14,6 @@
     height: 300px;
 }
 
-// .card {
-//     display: flex;
-//     display: -ms-flexbox;
-//     flex-direction: column;
-//     -ms-flex-direction: column;
-//     margin: 10%;
-//     font-family: 'Rubik', sans-serif;
-//     font-weight: 600;
-//     font-size: 1em;
-//     color: black;
-//     width: 250px;
-//     height: 250px;
-//     /* background-image: linear-gradient(to right, #e2e0ce, #c7c5b5); */
-//     background-image: linear-gradient(to right, #fffaf4, #eee0cb);
-//     /* background-color: #e2e0ce; */
-//     margin: 20px;
-//     border-radius: 5px;
-//     box-shadow: 3px 3px 6px black;
-//     transition: all 0.5s ease-in-out;
-//     user-select: none;
-// }
-
 .card:hover {
     transform: scale(1.1);
     backface-visibility: hidden; 
@@ -148,6 +126,7 @@ i.card__icon {
 .list-button {
     display: block;
     padding: 5px;
+    margin-bottom: 5px;
     background: white;
     border: 1px solid black;
     color: black;

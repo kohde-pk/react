@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import '../../components/Content/Content.scss';
 import Content from '../../components/Content/Content';
+import Article from '../../components/Content/Article';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import ContentModal from '../../containers/Modal/ContentModal';
 import axios from '../../axios';
@@ -33,12 +34,6 @@ class ContentCard extends Component {
             }) ;
     }   
 
-    toggleModal = () => {
-        this.setState({ 
-            isOpen: !this.state.isOpen 
-        });
-    }
-
     onView(id) {
         console.log(this.state.props);
     }
@@ -61,8 +56,13 @@ class ContentCard extends Component {
                                 timeToRead={content.timeToRead}
                                 views={content.views}
                                 dateAdded={content.dateAdded} 
-                                onView={content.onView}
                                 />
+                                 <Article 
+                                    key={index}
+                                    id={content.id}
+                                    title={content.title}
+                                    content={content.content}
+                                 />
                     </div>
                 )
                 });
@@ -72,9 +72,7 @@ class ContentCard extends Component {
             <section className="content-container">
                 {contents}
                 <div>
-                    {/* <button onClick={this.openModalHandler}>
-                        View
-                    </button> */}
+                {/* <button onClick={this.props.onClose}>Close</button> */}
                     <ContentModal 
                         show={this.state.isOpen}
                         onClose={this.toggleModal}
@@ -87,10 +85,9 @@ class ContentCard extends Component {
                         timeToRead={this.state.timeToRead}
                         views={this.state.views}
                         dateAdded={this.state.dateAdded}
-                        onView={this.state.onView}
-                        
                     />
                 </div>
+               
             </section>
             
         )

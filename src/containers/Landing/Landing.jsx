@@ -5,7 +5,7 @@ import bgImage from './../../assets/img/dashboard.png';
 import './Landing.scss';
 // import AddLinkForm from '../Form/Form';
 
-const landing = ( props ) => (
+const landing = (props) => (
     <div className="container">
         <main>
             <section className="landing-page">

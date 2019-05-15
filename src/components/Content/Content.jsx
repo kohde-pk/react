@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {PropTypes} from 'prop-types';
 
 
-class content extends Component {
+class Content extends Component {
     static propTypes = {
         title: PropTypes.string.isRequired,
         content: PropTypes.string.isRequired,
@@ -14,10 +14,10 @@ class content extends Component {
         views: PropTypes.number.isRequired,
         onView: PropTypes.func
     }
-
+   
 
     render() {
-        const {title, content, owner, id, image, dateAdded, timeToRead, views} = this.props;
+        const {title, content, owner, id, image, dateAdded, timeToRead, views, onView, isOpen, toggleModal} = this.props;
         
         return(
             <div className="card card-item">
@@ -30,7 +30,7 @@ class content extends Component {
                 </div>
                 <div className="card-footer">
                     <p className="content-owner">{owner}</p>   
-                    <button className="buttons content-button">{id}</button> 
+                    <button onClick={toggleModal} className="buttons content-button">{id}</button> 
                     <p className="date-added">{dateAdded}</p>    
                     <p className="time-read">{timeToRead} min read</p>
                     <i className="view-icon fas fa-eye fa-1x">
@@ -42,4 +42,4 @@ class content extends Component {
     }
 }
 
-export default content;
+export default Content;

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 
 import Modal from 'react-bootstrap/Modal';
 import Button  from 'react-bootstrap/Button';
 import Backdrop from './Backdrop/Backdrop';
 
-import ContentCard from '../Cards/ContentCard';
 
 import './ContentModal.scss';
 
@@ -53,12 +51,14 @@ class ContentModal extends Component {
           </Modal.Header>
           <Modal.Body>
             <h4>Article</h4>
+            <p>{this.props.content}</p>
+
             <p>
               {this.props.children}
             </p>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.modalCloseHandler} bsStyle="success">Close</Button>
+            <Button onClick={this.props.onClose}>Close</Button>
           </Modal.Footer>
         </Modal>
         </div>
@@ -66,8 +66,5 @@ class ContentModal extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  
-}
 
-export default withRouter(ContentModal);
+export default ContentModal;

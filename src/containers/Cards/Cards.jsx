@@ -25,6 +25,22 @@ class Cards extends Component {
                 this.setState({loading: false});
             });
     }
+
+    editCard = (id) => {
+        return new Promise((resolve, reject) => {
+            axios
+                .put(`content/notes`, {id})
+                .then(() => {
+                    resolve();
+                    return;
+                })
+                .catch(error => {
+                    reject(error.message);
+                    return;
+                });
+        });
+        
+    };
     render() {
         return (
             <div>
@@ -35,8 +51,7 @@ class Cards extends Component {
                     id={card.id}
                     owner={card.owner}
                     title={card.title}
-                    image={card.image}
-                    
+                    image={card.image}    
                     />
                 ))}
             </div>  
