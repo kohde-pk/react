@@ -18,7 +18,7 @@ class ContentCard extends Component {
             isOpen: false,
             id: null
         }
-        this.onView = this.onView.bind(this);
+        this.onViewHandler= this.onViewHandler.bind(this);
 
     }
         
@@ -34,8 +34,10 @@ class ContentCard extends Component {
             }) ;
     }   
 
-    onView(id) {
-        console.log(this.state.props);
+    onViewHandler(id) {
+        console.log('contentcard', this.props)
+        this.isOpen = true;
+        this.setState({isOpen: true })
     }
 
     render() {
@@ -47,7 +49,7 @@ class ContentCard extends Component {
                 return (
                     <div key={index}>
                             <Content
-                                key={index}
+                                key={content.id}
                                 id={content.id}
                                 image={content.image}
                                 title={content.title}
@@ -56,12 +58,13 @@ class ContentCard extends Component {
                                 timeToRead={content.timeToRead}
                                 views={content.views}
                                 dateAdded={content.dateAdded} 
+                                onViewHandler={this.onViewHandler}
                                 />
                                  <Article 
-                                    key={index}
-                                    id={content.id}
                                     title={content.title}
                                     content={content.content}
+                                    id={content.id}
+                                    onViewHandler={this.onViewHandler}
                                  />
                     </div>
                 )
@@ -85,6 +88,7 @@ class ContentCard extends Component {
                         timeToRead={this.state.timeToRead}
                         views={this.state.views}
                         dateAdded={this.state.dateAdded}
+                        onViewHandler={this.onViewHandler}
                     />
                 </div>
                

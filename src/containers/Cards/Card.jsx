@@ -9,8 +9,7 @@ const Card = (props) => (
         <p className="list-title">{props.title}</p>
         <p className="list-author">Author: {props.owner}</p>
         <p className="list-id">ID: {props.id}</p>
-        <button className="list-button">View Article</button>
-        <button className="list-button">Edit Article</button>
+        <button className="list-button" onClick={() => props.showContent(props.id)}>View Article</button>
     </div>
 
 

@@ -14,13 +14,13 @@
     height: 300px;
 }
 
-.card:hover {
-    transform: scale(1.1);
-    backface-visibility: hidden; 
-    perspective: 1;  
-    -webkit-filter: blur(0);
-    filter: blur(0);
-}
+// .card:hover {
+//     transform: scale(1.1);
+//     backface-visibility: hidden; 
+//     perspective: 1;  
+//     -webkit-filter: blur(0);
+//     filter: blur(0);
+// }
 
 .header {
     font-family: 'Russo One', sans-serif;
@@ -90,12 +90,29 @@ i.card__icon {
 
 // card list
 
+.list-container {
+    color: black;
+}
+
 .list {
     padding: 15px;
     width: 40%;
     margin: 15px;
     border: 1px solid black;
     box-shadow: 1px 1px 1px #ccc;
+}
+
+.list-info {
+    max-height: 250px;
+}
+
+.list-article {
+    width: 100%;
+    display: none;
+}
+
+.list-article-active {
+    display: block;
 }
 
 .list-thumb {

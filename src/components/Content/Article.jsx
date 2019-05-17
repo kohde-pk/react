@@ -2,33 +2,32 @@ import React, { Component } from 'react';
 
 import './Content.scss';
 import axios from './../../axios';
+
 import styled from "styled-components";
 
-class article extends Component {
+class Article extends Component {
     onArticleSubmit(id) {
         axios
             .get("/content/json")
             .then(response => {
-                console.log(response);
+                // console.log(response);
             });
     }
     state = {
         toggle: false,
     }
     render() {
-        console.log(this.props);
+        console.log('Article', this.props);
         return (
-            <div className="">
-            <p>{this.props.content}</p>
-            <p>{this.props.id}</p>
-
-            
+            <div className="list-article">
+              <p>{this.props.content}</p>
+              <p>{this.props.id}</p>
             </div>
         )
     }
 };
 
-export default article;
+export default Article;
 
 const div = styled.div`
 
