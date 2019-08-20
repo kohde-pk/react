@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Aux from '../../../hoc/Aux';
+import Aux from './../../hoc/Aux';
 import Modal from 'react-bootstrap/Modal';
 import Button  from 'react-bootstrap/Button';
 import Backdrop from './Backdrop/Backdrop';
@@ -9,7 +9,7 @@ import './ContentModal.scss';
 
 class ContentModal extends Component {
   state = {
-        modalOpen: true
+        modalOpen: false
     }
 
   shouldComponentUpdate ( nextProps, nextState ) {
@@ -20,20 +20,24 @@ class ContentModal extends Component {
     console.log('willUpdate');
   }
 
+  modalOpenHandler () {
+    this.setState({modalOpen: true})
+  }
+
   modalCloseHandler = () => {
     console.log(this.nextProps);
     this.props.history.push('/content');
-
   }
 
   modalContinueHandler = () => {
     this.props.history.push('/content/content');
   }
     render() {
+      const {title, owner, content, modalClosed, show} = this.props;
       return (
         <Aux>
-          <Backdrop show={this.state.modalOpen} clicked={!this.state.modalOpen} />
-            <h2>Title: {this.props.title}</h2>
+          <Backdrop show={show} clicked={modalClosed} />
+            <h2>Title: {title}</h2>
           <div
               className="Modal"
               style={{
@@ -50,12 +54,13 @@ class ContentModal extends Component {
           centered >
           <Modal.Header>
             <Modal.Title id="contained-modal-title-vcenter">
-              Title: {this.props.title}
+              Title: {title}
+              <p>Author: {owner}</p>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <h4>Article</h4>
-            <p>Content: {this.props.content}</p>
+            <p>Content: {content}</p>
 
             <p>
               {this.props.children}

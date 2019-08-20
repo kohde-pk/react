@@ -61,7 +61,8 @@ section.content-container {
     }
 
     .card-article {
-        display: none;
+        // display: none;
+        display: block;
 
         &:active {
             display: block;
@@ -104,21 +105,24 @@ section.content-container {
     }
     
     .content-button {
-        width: 130px;
         font-family: "work sans",sans-serif;
         font-size: 0.7rem;
         font-weight: 700;
-        color: #0b4f6c;
+        color: $secondary-text-color;
         margin: 0;
         grid-column: 2 / 3;
         grid-row: 1 / 1;
         justify-self: flex-end;
         align-self: flex-start;
+        text-align: right;
         // @include shadow-form-btn();
+
+        &:hover {
+            color: menu-hover-2;
+        }
     }
     .card-footer .date-added {
         margin-bottom: 1px;
-
         margin-top:16px;
         grid-column: 1 / 2;
         grid-row: 2 / 2;

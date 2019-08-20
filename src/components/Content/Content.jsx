@@ -1,25 +1,12 @@
-import React, { Component } from 'react';
-import {PropTypes} from 'prop-types';
+import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
-
-class Content extends Component {
-    static propTypes = {
-        title: PropTypes.string.isRequired,
-        content: PropTypes.string.isRequired,
-        owner: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired,
-        image: PropTypes.string.isRequired,
-        dateAdded: PropTypes.string.isRequired,
-        timeToRead: PropTypes.string.isRequired,
-        views: PropTypes.number.isRequired,
-    }
-   
+class Content extends Component {   
 
     render() {
-        const {title, owner, content, image, dateAdded, timeToRead, views, onViewHandler} = this.props;
-        
+        const {title, owner, id, image, dateAdded, timeToRead, views} = this.props;
         return(
-            <React.Fragment>
+            <Fragment>
                 <div className="card card-item">
                     <div style={{ backgroundImage: `url(${image})` }} className="card-header">
                     <img className="content-type" href={image} alt=""/>
@@ -27,13 +14,13 @@ class Content extends Component {
                     </div>
                     <div className="card-info">
                         <p className="content-title">{title}</p>
-                    </div>
-                    <div className="card-article">
-                        <p className="content-text">{content}</p>
+                        <p className="content-id">{id}</p>
                     </div>
                     <div className="card-footer">
-                        <p className="content-owner">{owner}</p>   
-                        <button onClick={onViewHandler} className="content-button">Continue Reading...</button> 
+                        <p className="content-owner">{owner}</p> 
+                        <Link to={'/' + id}>
+                            <p className="content-button">Read Article</p> 
+                        </Link>  
                         <p className="date-added">{dateAdded}</p>    
                         <p className="time-read">{timeToRead} min read</p>
                         <i className="view-icon fas fa-eye fa-1x">
@@ -41,7 +28,7 @@ class Content extends Component {
                         </i> 
                     </div>
                 </div>
-            </React.Fragment>
+            </Fragment>
         );
     }
 }

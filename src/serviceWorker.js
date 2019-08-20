@@ -30,29 +30,59 @@ export function register(config) {
       // serve assets; see https://github.com/facebook/create-react-app/issues/2374
       return;
     }
-
+    
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
+      console.log.apply('Load');
+      
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config);
-
+        console.log.apply('isLocalhost');
+        
         // Add some additional logging to localhost, pointing developers to the
         // service worker/PWA documentation.
         navigator.serviceWorker.ready.then(() => {
           console.log(
             'This web app is being served cache-first by a service ' +
-              'worker. To learn more, visit https://bit.ly/CRA-PWA'
-          );
-        });
-      } else {
-        // Is not localhost. Just register service worker
-        registerValidSW(swUrl, config);
-      }
-    });
+            'worker. To learn more, visit https://bit.ly/CRA-PWA'
+            );
+          });
+        } else {
+          // Is not localhost. Just register service worker
+          registerValidSW(swUrl, config);
+          console.log.apply('!isLocalhost');
+        }
+      });
+    }
   }
-}
+  
+  window.addEventListener('install', function(event) {
+  console.log('[Service Worker] Installing Service Worker ...', event);
+  event.waitUntil(
+    caches.open('static')
+      .then(function(cache) {
+        console.log('[Service Worker] Pre-caching App Shell');
+        cache.addAll([
+          '/',
+          '/index.html',
+          '/offline.html',
+          '/src/App.js',
+          '/src/js/material.min.js',
+          '/src/index.css',
+          '/src/css/feed.css',
+          '/src/assets/main.css',
+          '/src/assets/icons/bailey-144x144.png',
+          'https://media.giphy.com/media/LHZyixOnHwDDy/giphy.gif',
+          'https://fonts.googleapis.com/css?family=Rubik|Work+Sans:400,600',
+          'https://fonts.googleapis.com/css?family=Cinzel:400,700|Pridi:400,700',
+          'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Roboto+Slab:400,700',
+          'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
+          'https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css'
+        ]);
+      })
+    )
+});
 
 function registerValidSW(swUrl, config) {
   navigator.serviceWorker

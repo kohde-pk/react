@@ -1,41 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './Content.scss';
-import axios from './../../axios';
 
-import styled from "styled-components";
+const Article = (props) => (
 
-class Article extends Component {
-    onArticleSubmit(id) {
-        axios
-            .get("/content/json")
-            .then(response => {
-                // console.log(response);
-            });
-    }
-    state = {
-        toggle: false,
-    }
-    render() {
-        console.log('Article', this.props);
-        return (
-            <div className="list-article">
-              <p>{this.props.content}</p>
-              <p>{this.props.id}</p>
-            </div>
-        )
-    }
-};
+        <div className="list-article">
+          <p className="list-title">{this.props.title}</p>
+          <p className="list-author">Author: {props.owner}</p>
+          <p className="list-content">{props.content}</p>
+          <div className="list-footer">
+            <p className="list-time">{props.timeToRead} read</p>
+            <p className="list-date-added">Added: {props.dateAdded}</p>
+            <p className="list-view">{props.views} views</p>
+          </div>
+          <button className="buttons button-article">I've read enough</button>
+        </div>
+    )
 
 export default Article;
-
-const div = styled.div`
-
-  .hiddenContent {
-    display: none;
-  }
-  .visibleContent {
-    display: block;
-    text-align: center;
-  }
-`;

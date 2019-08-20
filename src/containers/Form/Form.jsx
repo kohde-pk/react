@@ -116,7 +116,7 @@ class AddLinkForm extends Component {
                             required/>
                     </div>
                     <div className="form-line">
-                        <label htmlFor="form-title-input">*Time to Read:</label>
+                        <label htmlFor="form-title-input">*Time to Read (minutes):</label>
                         <input 
                             key="timeToRead"
                             name="timeToRead"

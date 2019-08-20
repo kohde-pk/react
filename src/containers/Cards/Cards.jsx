@@ -28,23 +28,18 @@ class Cards extends Component {
     }
 
     handleChange = event => {
-        console.log(event.currentTarget.value);
+        console.log('handleChange', event.currentTarget.value);
     }
 
 
     showContent = key => {
-        console.log(key)
+        console.log('key', key)
         const myArr = this.state;
         console.log('myArr', myArr)
-        const thisName = this.state.cards.find(function(o) {
-            return o.id === key;
-        })
-        console.log(myArr)
+
         // const myItem = this.state.cards.filter(this.state.cards.id)
         // const cards = { ...this.state.cards };
         // const cardContent = this.state.cards.content.content;
-        // console.log(cardContent)
-        //console.log(cardContent);
         //cards.title = cards.title;
         // this.setState({ cards });
     }
@@ -63,14 +58,11 @@ class Cards extends Component {
                             content={card.content}
                             image={card.image}
                             showContent={this.showContent}
+                            thisName={this.thisName}
                         />
                     ))}
                     </div>
-                    <div className=" list list-container">
-                        <p className="list-header">
-                            Title 
-                        </p>
-                    </div>
+
             </React.Fragment>
         );
     }
