@@ -98,6 +98,12 @@ a.cta {
       text-decoration: none;
     }
 
+    @media (max-width: 800px) {
+      a.cta {
+        padding: 10px 10px;
+      }
+    }  
+
 @keyframes bounceInRight {
     from,
     60%,

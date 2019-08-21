@@ -20,7 +20,7 @@ class NavbarInstance extends Component {
                 <Nav.Link href="/Add">Add Articles</Nav.Link>
             <NavDropdown title="View Articles" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="/content">Cards View</NavDropdown.Item>
-                <NavDropdown.Item href="/cardList">Content List</NavDropdown.Item>
+                <NavDropdown.Item href="/cardList">List View</NavDropdown.Item>
                 <NavDropdown.Item href="/article/:id">View Article</NavDropdown.Item>
                 <NavDropdown.Item href="/content">Image</NavDropdown.Item>
             </NavDropdown>

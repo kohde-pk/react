@@ -49,17 +49,17 @@ class Post extends Component {
       :
       <div className="post">
         <h4 className="list-title">{this.state.blog.title}</h4>
-        <p className="list-author">Author: {this.state.blog.owner}</p>
+        <p className="grid-author">Author: {this.state.blog.owner}</p>
         <div className="list-footer">
           <p className="list-time">{this.state.blog.timeToRead} minutes to read</p>
           <p className="list-date-added">Added: {this.state.strDate}</p>
-          <p className="list-view">{this.state.blog.views} views</p>
+          <p className="list-view">{this.state.blog.views}&nbsp;&nbsp;&nbsp; times viewed</p>
         </div>
-        <p className="list-content">
+        <div className="list-content">
           <ReactMarkdown>
             {this.state.blog.content}
           </ReactMarkdown>
-        </p>
+        </div>
         <a href="/content" className="button-article">I'm Done</a>
       </div>
     ) 
