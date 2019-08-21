@@ -93,7 +93,6 @@ i.card__icon {
     flex-direction: column;
     margin: 15px;
     padding: 15px;
-    width: 40%;
 }
 
 .list-info {
@@ -201,15 +200,12 @@ h4.list-title {
 
 .list-button {
     align-self: flex-end;
-    background: white;
+    background: $second-accent;
     border: 1px solid black;
     box-shadow: 1px 1px 1px #ccc;
-    color: black;
-    display: block;
-    margin-bottom: 5px;
+    color: white;
     padding: 5px;
     text-align: center;
-    width: 25%;
 }
 
 .button-article {
