@@ -3,13 +3,13 @@
   "name": "Prokarma Technical Documentation",
   "icons": [
     {
-      "src": "app-icon-192x192.png",
-      "sizes": "192x192",
+      "src": "pictures-icon.png",
+      "sizes": "512x512",
       "type": "image/x-icon"
     },
     {
-      "src": "app-icon-512x512.png",
-      "sizes": "512x512",
+      "src": "app-icon-192x192.png",
+      "sizes": "192x192",
       "type": "image/x-icon"
     },
     {
