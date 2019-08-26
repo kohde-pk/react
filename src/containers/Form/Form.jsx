@@ -89,6 +89,7 @@ class AddLinkForm extends Component {
                 <div className="form-header">
                     <p>Add an Article</p>
                 </div>
+                <div className="form-area">
                     <div>
                         <input 
                             key="owner" 
@@ -159,10 +160,9 @@ class AddLinkForm extends Component {
                         name='content'
                         id='content-input'
                         rows='16'
-                        cols='120'
                         spellCheck='true'
                         autoComplete='off'
-                        placeholder="Where you add your text"
+                        placeholder="Enter your content including Markdown"
                         value={this.state.content}
                         onChange={this.handleChange}
                         required/>
@@ -181,7 +181,8 @@ class AddLinkForm extends Component {
                             style={{alignSelf: 'flex-end', marginRight: '10px'}}>
                             ADD
                         </button>       
-                    </div>
+                    </div>               
+                </div>
                 </form>
             </div>
         )

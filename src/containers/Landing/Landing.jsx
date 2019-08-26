@@ -13,7 +13,6 @@ const landing = (props) => (
                 <div className="landing-info">
                     <a href="/content" className="cta">View Content</a>
                 </div>
-                {/* <Circles /> */}
                 <img className="landing-image" src={bgImage} alt=""/>
             </section>
         </main>

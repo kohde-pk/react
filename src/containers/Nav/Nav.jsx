@@ -9,7 +9,7 @@ import './Nav.css';
 class NavbarInstance extends Component {
     render() {
         return (
-        <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="/">ProKarma</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
