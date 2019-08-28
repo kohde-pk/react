@@ -22,7 +22,8 @@ class AddLinkForm extends Component {
             views: '',
             timeToRead: '',
             dateAdded: '',
-            dataCreated: ''
+            dataCreated: '',
+            offLine: []
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -66,18 +67,25 @@ class AddLinkForm extends Component {
             title: this.state.title,
             views: 0
         }
-
-        axios.post('/content.json', record)
-            .then(response => console.log('response'))
-            .catch(console.log(record));
-
-        this.setState({
-            image: '',
-            title: '',
-            owner: '',
-            content: "",
-            timeToRead: ''
-        })
+        if (!(window.navigator.onLine)) {
+            localStorage.setItem(record.id, JSON.stringify(record));
+            localStorage.getItem('offLine' || offLine);
+            console.log(offLine)
+            localStorage.setItem('offLine', JSON.stringify(record.id));
+            console.log(JSON.stringify(record));
+        } else {
+            axios.post('/content.json', record)
+                .then(response => console.log('response'))
+                .catch(console.log(record));
+    
+            this.setState({
+                image: '',
+                title: '',
+                owner: '',
+                content: "",
+                timeToRead: ''
+            })
+        }
     }
     
     render() {
