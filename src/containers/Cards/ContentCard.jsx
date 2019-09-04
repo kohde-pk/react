@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import Aux from '../../hoc/Aux';
 
 import '../../components/Content/Content.scss';
 import Content from '../../components/Content/Content';
-import Article from '../../components/Content/Article';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import ContentModal from '../../containers/Modal/ContentModal';
+import Modal from '../../containers/Modal/Modal';
 import axios from '../../axios';
 
 class ContentCard extends Component {
@@ -31,11 +31,11 @@ class ContentCard extends Component {
             }).catch( error => {
                 console.log(error);
                 this.setState({ error: true });
-            }) ;
-    }   
-
+            });
+    }  
+    
     onView(id) {
-        console.log(this.state.props);
+        console.log('props', this.state.props);
     }
 
     render() {
@@ -46,23 +46,16 @@ class ContentCard extends Component {
             contents = this.state.items.map((content, index) => {
                 return (
                     <div key={index}>
-                            <Content
-                                key={index}
-                                id={content.id}
-                                image={content.image}
-                                title={content.title}
-                                content={content.content}
-                                owner={content.owner}
-                                timeToRead={content.timeToRead}
-                                views={content.views}
-                                dateAdded={content.dateAdded} 
-                                />
-                                 <Article 
-                                    key={index}
-                                    id={content.id}
-                                    title={content.title}
-                                    content={content.content}
-                                 />
+                        <Content
+                            key={index}
+                            id={content.id}
+                            image={content.image}
+                            title={content.title}
+                            content={content.content}
+                            owner={content.owner}
+                            timeToRead={content.timeToRead}
+                            views={content.views}
+                            />
                     </div>
                 )
                 });
@@ -71,9 +64,9 @@ class ContentCard extends Component {
         return (
             <section className="content-container">
                 {contents}
-                <div>
-                {/* <button onClick={this.props.onClose}>Close</button> */}
-                    <ContentModal 
+                <Aux>
+                    <Modal> 
+                    <Content
                         show={this.state.isOpen}
                         onClose={this.toggleModal}
                         key={this.state.id}
@@ -86,8 +79,8 @@ class ContentCard extends Component {
                         views={this.state.views}
                         dateAdded={this.state.dateAdded}
                     />
-                </div>
-               
+                    </Modal>
+                </Aux>
             </section>
             
         )

@@ -98,6 +98,34 @@ a.cta {
       text-decoration: none;
     }
 
+    @media (max-width: 800px) {
+      a.cta {
+        padding: 10px 10px;
+      }
+    }  
+
+    @media (max-width: 645px) {
+      section.landing-page {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr .25fr .5fr;
+      }
+      .landing-text,
+      .landing-info,
+      .landing-image {
+        grid-area: span 1;
+      }
+      .landing-image {
+        grid-row-start: 1;
+      }
+      .landing-info {
+        grid-row-start: 2;
+      }
+      .landing-text {
+        align-self: baseline;
+        font-size: 2rem;
+      }
+    } 
+
 @keyframes bounceInRight {
     from,
     60%,

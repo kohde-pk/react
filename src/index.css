@@ -12,3 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.pwa-icon {
+  color: white;
+  font-size: smaller;
+  text-align: center;
+}

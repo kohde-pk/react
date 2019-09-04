@@ -13,7 +13,7 @@ section.content-container {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 12fr 5fr 5fr;
-        grid-gap: 20px      ;
+        grid-gap: 20px;
     }
 
     .card {
@@ -30,6 +30,15 @@ section.content-container {
         user-select: none;
         cursor: pointer;
         transition: all 0.5s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+            backface-visibility: hidden; 
+            perspective: 1;  
+            -webkit-filter: blur(0);
+            filter: blur(0);
+        }
+
     }
     
     .card-header {
@@ -49,6 +58,19 @@ section.content-container {
         justify-self: flex-start; //left 
         align-self: flex-start; //top
         line-height: 1;
+    }
+
+    .card-article {
+        // display: none;
+        display: block;
+
+        &:active {
+            display: block;
+        }
+    }
+
+    .content-text {
+        font-weight: 400;
     }
     
     .content-type {
@@ -83,20 +105,24 @@ section.content-container {
     }
     
     .content-button {
-        width: 60px;
         font-family: "work sans",sans-serif;
         font-size: 0.7rem;
         font-weight: 700;
+        color: $secondary-text-color;
         margin: 0;
         grid-column: 2 / 3;
         grid-row: 1 / 1;
         justify-self: flex-end;
         align-self: flex-start;
-        @include shadow-form-btn();
+        text-align: right;
+        // @include shadow-form-btn();
+
+        &:hover {
+            color: menu-hover-2;
+        }
     }
     .card-footer .date-added {
         margin-bottom: 1px;
-
         margin-top:16px;
         grid-column: 1 / 2;
         grid-row: 2 / 2;

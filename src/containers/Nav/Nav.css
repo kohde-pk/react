@@ -1,11 +1,23 @@
 nav>.navbar-brand {
-    font-family: 'Roboto Slab', serif;
-    font-family: 'Cinzel', serif;
-    font-family: 'Pridi', serif;
+    font-family: Rubik, serif;
     font-weight: 700;
     font-size: 1.75rem;
 }
 
 .dropdown-toggle {
     font-weight: 700;
+}
+
+.bg-dark {
+    color: #0b4f6c;
+}
+
+.navbar-toggler:focus, .navbar-toggler:hover {
+    outline: none;
+}
+
+navbar button:hover {
+    background-color: $menu-hover-2;
+    color: $light-text-color;
+    //box-shadow: 3px 3px 6px $border-shadow-color;
 }
