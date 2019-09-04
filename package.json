@@ -27,7 +27,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile:css": "node-sass src/assets/sass/main.scss src/assets/css/main.css -w"
+    "compile:css": "node-sass src/assets/sass/main.scss src/assets/css/main.css -w",
+    "generate-sw": "workbox generate:sw"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "workbox-cli": "^2.1.3"
   }
 }

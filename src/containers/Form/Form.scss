@@ -79,9 +79,8 @@ option {
 }
 
 button:hover {
-    background-color: $accent-color;
+    background-color: $border-shadow-color;
     color: $light-text-color;
-    box-shadow: 3px 3px 6px $border-shadow-color;
 }
 
 button:active {

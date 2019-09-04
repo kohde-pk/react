@@ -1,0 +1,66 @@
+@import "../../App.scss";
+
+* {
+    font-family: 'Roboto Slab', serif;
+}
+
+nav.login {
+  align-items: center;
+  background-color: $bg-field-color;
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  padding: 20px;
+  width: 60%;
+
+  @include shadow-3px;
+}
+
+button.github,
+button.email-login {
+  background-color: $secondary-text-color;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 400;
+  margin: 5px;
+  outline: none;
+  padding: 10px;
+
+  @include shadow-3px;
+}
+
+p.login-text {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+section.login-form {
+  display: none;
+}
+
+section.login-form-active {
+  text-align: center;
+  display: block;
+}
+
+section input.login-email,
+section input.login-password {
+  background-color: $bg-field-color;
+  border: none;
+  border-bottom: 1px solid $secondary-text-color;
+  font-size: 0.8em;
+  outline: none;
+}
+
+
+@media (max-width : 415px) {
+  p.login-text {
+    font-size: 1rem;
+  }
+  button.github,
+  button.email-login {
+    font-size: 0.8rem;
+    font-weight: 300;
+    padding: 5px;
+  }
+}

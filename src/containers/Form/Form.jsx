@@ -1,8 +1,11 @@
 
 import React, { Component } from 'react';
+import firebase from 'firebase';
 
 import '../../App.scss';
 import './Form.scss';
+import Login from '../../components/Login/Login';
+import { firebaseApp } from '../../base';
 import axios from '../../axios';
 
 class AddLinkForm extends Component {
@@ -23,13 +26,57 @@ class AddLinkForm extends Component {
             timeToRead: '',
             dateAdded: '',
             dataCreated: '',
-            offLine: []
+            offLine: [],
+            hideEmail: true,
+            email: '',
+            password: '',
+            uid: null,
+            userEmail: null
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleReset = this.handleReset.bind(this);
     }
+
+    componentDidMount() {
+        firebase.auth().onAuthStateChanged(user => {
+          if (user) {
+            this.authHandler({ user });
+          }
+        });
+      }
+
+    authHandler = async authData => {
+        console.log('User Data', authData);
+        this.setState({
+            uid: authData.user.uid,
+            userEmail: authData.user.email
+          });
+    }
+    
+    authenticate = (provider, email, password) => {
+        console.log('auth', email);
+        if (provider === 'Github') {
+            const authProvider = new firebase.auth[`${provider}AuthProvider`]();
+            firebaseApp
+                .auth()
+                .signInWithPopup(authProvider)
+                .then(this.authHandler);
+        } else if (provider === 'Email') {
+            console.log(email);
+            const authProvider = new firebase.auth().signInWithEmailAndPassword(email, password);
+            firebaseApp
+                .auth()
+                .signInWithPopup(authProvider)
+        }
+    };
+
+    logout = async () => {
+        console.log("Logging out!");
+        await firebase.auth().signOut();
+        this.setState({ uid: null });
+      };
 
     handleChange(event) {
         this.setState({[event.target.name]: event.target.value});
@@ -42,7 +89,7 @@ class AddLinkForm extends Component {
                 items: [...this.state.items]
             }
         });
-    }
+    };
 
     handleReset(event) {
         event.preventDefault();
@@ -53,7 +100,8 @@ class AddLinkForm extends Component {
             content: "",
             timeToRead: ''
         })
-    }
+    };
+
     handleSubmit(event) {
         event.preventDefault();
         const record = {
@@ -69,9 +117,6 @@ class AddLinkForm extends Component {
         }
         if (!(window.navigator.onLine)) {
             localStorage.setItem(record.id, JSON.stringify(record));
-            localStorage.getItem('offLine' || offLine);
-            console.log(offLine)
-            localStorage.setItem('offLine', JSON.stringify(record.id));
             console.log(JSON.stringify(record));
         } else {
             axios.post('/content.json', record)
@@ -86,11 +131,20 @@ class AddLinkForm extends Component {
                 timeToRead: ''
             })
         }
-    }
+    };
     
     render() {
-        // const {owner, title, contentType, content, timeToRead, timeToReadUnit, url, contentDate} = this.state;
 
+        if (!this.state.uid) {
+            return (
+                <Login 
+                    authenticate={this.authenticate} 
+                    hideEmail={this.hideEmail} 
+                    email={this.email}
+                    password={this.password}    
+                    />
+            );
+        }
         return (
             <div className="form-container">
              <form className="add-form" onSubmit={this.handleSubmit}>
@@ -193,7 +247,7 @@ class AddLinkForm extends Component {
                 </div>
                 </form>
             </div>
-        )
+        );
     }
 }
 
