@@ -55,8 +55,7 @@ class AddLinkForm extends Component {
           });
     }
     
-    authenticate = (provider, email, password) => {
-        console.log('auth', email);
+    authenticate = (provider) => {
         if (provider === 'Github') {
             const authProvider = new firebase.auth[`${provider}AuthProvider`]();
             firebaseApp
@@ -64,11 +63,10 @@ class AddLinkForm extends Component {
                 .signInWithPopup(authProvider)
                 .then(this.authHandler);
         } else if (provider === 'Email') {
-            console.log(email);
-            const authProvider = new firebase.auth().signInWithEmailAndPassword(email, password);
+            // const authProvider = new firebase.auth().signInWithEmailAndPassword(email, password);
             firebaseApp
                 .auth()
-                .signInWithPopup(authProvider)
+                // .signInWithPopup(authProvider)
         }
     };
 
@@ -134,14 +132,13 @@ class AddLinkForm extends Component {
     };
     
     render() {
-
-        if (!this.state.uid) {
+        console.log('uid',this.state.uid);
+        if (!this.state.uid || this.state.uid === null) {
+            console.log(this.state.uid)
             return (
                 <Login 
                     authenticate={this.authenticate} 
-                    hideEmail={this.hideEmail} 
-                    email={this.email}
-                    password={this.password}    
+                    hideEmail={this.hideEmail}   
                     />
             );
         }
@@ -224,7 +221,7 @@ class AddLinkForm extends Component {
                         rows='16'
                         spellCheck='true'
                         autoComplete='off'
-                        placeholder="Enter your content including Markdown"
+                        placeholder="Enter your content (including Markdown)"
                         value={this.state.content}
                         onChange={this.handleChange}
                         required/>

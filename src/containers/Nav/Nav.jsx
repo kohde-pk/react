@@ -24,9 +24,15 @@ class NavbarInstance extends Component {
                 {/* <NavDropdown.Item href="/article/:id">View Article</NavDropdown.Item>
                 <NavDropdown.Item href="/content">Image</NavDropdown.Item> */}
             </NavDropdown>
-            <Nav className="ml-auto">
-                <Nav.Link className="ml-auto" href="/Add">Login</Nav.Link>
-            </Nav>
+            <NavDropdown title="User" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="/Add">Login</NavDropdown.Item>
+                <NavDropdown.Item href="/Add">Logout</NavDropdown.Item>
+                {/* <NavDropdown.Item href="/article/:id">View Article</NavDropdown.Item>
+                <NavDropdown.Item href="/content">Image</NavDropdown.Item> */}
+            </NavDropdown>
+            {/* <Nav className="ml-auto">
+                <Nav.Link className="ml-auto" href="/Add">User</Nav.Link>
+            </Nav> */}
             </Nav>
         </Navbar.Collapse>
         </Navbar>

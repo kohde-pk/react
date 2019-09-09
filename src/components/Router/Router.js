@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import AddLinkForm from './../../containers/Form/Form';
-import ViewArticle from '../../containers/Article/ViewArticle';
 import Landing from './../../containers/Landing/Landing';
 import ContentCard from './../../containers/Cards/ContentCard';
 import Content from './../Content/Content';
@@ -13,7 +12,6 @@ const Router = () => (
   <React.Fragment>
     <Switch>
       <Route path="/add" component={AddLinkForm} />
-      <Route path="/article/" component={ViewArticle} />
       <Route path="/content" component={ContentCard} />
       <Route path="/cardList" component={Cards} />
       <Route path="/card" component={Content} />

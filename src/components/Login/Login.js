@@ -8,7 +8,7 @@ const Login = (props) => (
     <h2>Login</h2>
     <hr />
     <section className={props.hideEmail ? 'login-form' : 'login-form login-form-active'}>
-      <p className="login-text"> Login to your account</p>
+      {/* <p className="login-text"> Login to your account</p>
       <input 
         className="login-email" 
         type="email" 
@@ -27,7 +27,7 @@ const Login = (props) => (
         onClick={() => props.authenticate('Email')}
         >
         Log In with Email
-      </button>
+      </button> */}
       <hr />
       <button className="github" onClick={() => props.authenticate('Github')}>
         Log In with Github
