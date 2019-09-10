@@ -70,15 +70,15 @@ class AddLinkForm extends Component {
         }
     };
 
-    logout = async () => {
+    handleLogout = async () => {
         console.log("Logging out!");
         await firebase.auth().signOut();
         this.setState({ uid: null });
-      };
+    };
 
     handleChange(event) {
         this.setState({[event.target.name]: event.target.value});
-    }
+    };
 
     handleSave(data) {
         this.setState((prevState, props) => {

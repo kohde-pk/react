@@ -16,15 +16,25 @@ nav.login {
   @include shadow-3px;
 }
 
+nav hr {
+  margin-top: 0rem;
+    margin-bottom: 1rem;
+}
+
+
 button.github,
-button.email-login {
+button.email-login,
+button.logout {
   background-color: $secondary-text-color;
   border-radius: 5px;
   color: #fff;
+  display: block;
   font-weight: 400;
   margin: 5px;
   outline: none;
   padding: 10px;
+  text-align: center;
+  text-align: -webkit-center;
 
   @include shadow-3px;
 }
@@ -58,7 +68,8 @@ section input.login-password {
     font-size: 1rem;
   }
   button.github,
-  button.email-login {
+  button.email-login,
+  button.logout {
     font-size: 0.8rem;
     font-weight: 300;
     padding: 5px;

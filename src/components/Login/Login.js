@@ -1,44 +1,76 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import firebase from 'firebase';
+
 import './Login.scss';
+import { firebaseApp } from '../../base';
 
-const Login = (props) => (
-  
-  <nav className="login">
-    <h2>Login</h2>
-    <hr />
-    <section className={props.hideEmail ? 'login-form' : 'login-form login-form-active'}>
-      {/* <p className="login-text"> Login to your account</p>
-      <input 
-        className="login-email" 
-        type="email" 
-        placeholder="Email" 
-        onChange={(event,newValue) => this.setState({ email: newValue})}
-        required></input>
-      <input 
-        className="login-password" 
-        type="password" 
-          name="password" 
-          placeholder="Password" 
-          onChange={(event,newValue) => this.setState({ password: newValue})}
-          required></input>
-      <button 
-        className="email-login" 
-        onClick={() => props.authenticate('Email')}
-        >
-        Log In with Email
-      </button> */}
-      <hr />
-      <button className="github" onClick={() => props.authenticate('Github')}>
-        Log In with Github
-      </button>
-    </section>
-    <hr />
-  </nav>
-);
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        provider: 'Github',
+        hideEmail: false
+    }
+    this.handleLogout = this.handleLogout.bind(this);
+  };
 
-Login.propTypes = {
-  authenticate: PropTypes.func.isRequired
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.authHandler({ user });
+      }
+    });
+  }
+
+  authHandler = async authData => {
+    console.log('User Data', authData);
+    this.setState({
+        uid: authData.user.uid,
+        userEmail: authData.user.email
+      });
+}
+
+  authenticate = () => {
+    console.log("Authenticating!");
+      const authProvider = new firebase.auth[`${this.state.provider}AuthProvider`]();
+      console.log(authProvider);
+      firebaseApp
+          .auth()
+          .signInWithPopup(authProvider)
+          .then(this.authHandler);
+  };
+
+handleLogout = async () => {
+  console.log(this.state.uid);
+  console.log("Logging out!", this.state.uid);
+  await firebase.auth().signOut();
+  this.setState({ uid: null });
+  console.log("Logged Out", this.state.uid);
 };
+  
+render() {
+  console.log('login render')
+  return (
+    <nav className="login">
+      <h2>Login</h2>
+      <hr />
+      <section className={this.state.hideEmail ? 'login-form' : 'login-form login-form-active'}>
+        <hr />
+        <button 
+          className="github" 
+          onClick={this.authenticate}>
+          Log In with Github
+        </button>
+        <button 
+          className="logout" 
+          onClick={this.handleLogout}>
+          Log Out
+        </button>
+      </section>
+      <hr />
+    </nav>
+  )
+};
+}
 
 export default Login;
