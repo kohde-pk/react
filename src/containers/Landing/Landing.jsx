@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import bgImage from './../../assets/img/dashboard.png';
+import NotificationButton from '../../components/UI/Button/NotificationButton/NotificationButton'
 import './Landing.scss';
 
 class landing extends Component {
@@ -18,9 +18,8 @@ class landing extends Component {
                     </section>
                 </main>
                 <section className="notification">
-                    <button className="notifications">
-                        Subscribe to Notifications
-                    </button>
+                    <NotificationButton btnText='Subscribe to Notifications' btnFunc='ask' />
+                    <NotificationButton btnText='Unsubscribe to Notifications' btnFunc='remove' />
                 </section>
                 <footer>
                 </footer>
