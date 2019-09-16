@@ -31,22 +31,24 @@ section.landing-page {
 }
 
 .landing-text {
-  font-family: 'Pridi', sans-serif;
-  color: $second-accent;
-  line-height: 1;
-  font-size: 3rem;
-  font-weight: 700;
-  text-align: center;
-  grid-area: 1 / 1 / span 2 / 1;
-  justify-self: center;
   align-self: center;
   animation: fadeInDownBig 2s ease-in;
-  transition: all 1.5s;
-  text-shadow: 1px 2px 3px $border-shadow-color;
   border-bottom: 8px solid $menu-hover-2;
+  color: $second-accent;
+  font-family: 'Pridi', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  grid-area: 1 / 1 / span 2 / 1;
+  justify-self: center;
+  line-height: 1;
+  padding-bottom: 6px;
+  text-align: center;
+  text-shadow: 1px 2px 3px $border-shadow-color;
+  transition: all 1.5s;
 }
 
-a.cta {
+a.cta,
+button.notifications {
     padding: 10px 20px;
     font-family: 'Pridi', sans-serif;
     letter-spacing: 2px;
@@ -62,14 +64,26 @@ a.cta {
     transition: all 1s;
 } 
 
-  a.cta:hover {
+button.notifications {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 10px auto;
+}
+
+section.notification {
+  padding: inherit;
+}
+
+  a.cta:hover,
+  button.notifications:hover {
     color: $light-text-color;
     background-color: $accent-color;
     transform: translateY(-3px);
     box-shadow: 2px 2px 13px $border-shadow-color;
     }
 
-  a.cta:active {
+  a.cta:active,
+  button.notifications:active {
     color: $light-text-color;
     background-color: $accent-color;
     transform: translateY(1px);
@@ -97,6 +111,7 @@ a.cta {
       color: $menu-hover;
       text-decoration: none;
     }
+
 
     @media (max-width: 800px) {
       a.cta {

@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import AddLinkForm from './../../containers/Form/Form';
-import ViewArticle from '../../containers/Article/ViewArticle';
 import Landing from './../../containers/Landing/Landing';
+import Login from './../../components/Login/Login';
 import ContentCard from './../../containers/Cards/ContentCard';
 import Content from './../Content/Content';
 import Cards from './../../containers/Cards/Cards';
@@ -13,10 +13,10 @@ const Router = () => (
   <React.Fragment>
     <Switch>
       <Route path="/add" component={AddLinkForm} />
-      <Route path="/article/" component={ViewArticle} />
       <Route path="/content" component={ContentCard} />
       <Route path="/cardList" component={Cards} />
       <Route path="/card" component={Content} />
+      <Route path="/login" component={Login} />
       <Route exact path="/:id"  component={Post} />
       <Route exact path="/"  component={Landing} />
     </Switch>

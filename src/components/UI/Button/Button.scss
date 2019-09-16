@@ -1,0 +1,20 @@
+
+@import "../../Login/Login.scss";
+
+
+button.logout {
+  background-color: $secondary-text-color;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  margin: auto;
+  outline: none;
+  padding: 10px;
+  text-align: center;
+  text-align: -webkit-center;
+
+  @include shadow-3px;
+}
+

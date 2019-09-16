@@ -60,7 +60,7 @@ class Post extends Component {
             {this.state.blog.content}
           </ReactMarkdown>
         </div>
-        <a href="/content" className="button-article">I'm Done</a>
+        <a href="/content" className="button-article">Return to Articles</a>
       </div>
     ) 
 
