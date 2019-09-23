@@ -1,0 +1,23 @@
+.page-container {
+
+    // width: 1440px;
+    // margin: 0 auto;
+    // @media(max-width: 1400px) {
+    //     width: 1280px;
+    // }
+
+    .page-section {
+        /* background-image: url('../assets/imgs/image-1-gradient-information-to-insig-mask.png'); */
+        // background-repeat: no-repeat;
+        // background-position: top right;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        >.page-center {
+            flex: 1;
+            width: auto;
+        }
+    }
+}

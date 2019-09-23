@@ -1,0 +1,80 @@
+MeasureName,Period,Actual,Goal,Division,Reporting Period,Format,Measure Order, MeasureLabel
+Service to the Poor & Vulnerable,FY19 YTD November,18.6,18.7,CHI,,Percent,1,of gross revenue  
+Service to the Poor & Vulnerable,FY19 YTD November,14.7,14.5,Arkansas,,Percent,1,of gross revenue
+Service to the Poor & Vulnerable,FY19 YTD November,16.3,16.8,Fargo ,,Percent,1,of gross revenue
+Service to the Poor & Vulnerable,FY19 YTD November,24.7,25.5,Kentucky,,Percent,1,of gross revenue
+Service to the Poor & Vulnerable,FY19 YTD November,19.2,18.6,Nebraska,,Percent,1,of gross revenue
+Service to the Poor & Vulnerable,FY19 YTD November,22.1,21.8,Ohio Trinity,,Percent,1,of gross revenue
+Service to the Poor & Vulnerable,FY19 YTD November,21.9,23.1,Pacific Northwest,,Percent,1,of gross revenue
+Service to the Poor & Vulnerable,FY19 YTD November,8.7,9.0,Tennessee,,Percent,1,of gross revenue
+Service to the Poor & Vulnerable,FY19 YTD November,15.8,15.4,Texas,,Percent,1,of gross revenue
+Employee Engagement,FY19,TBD,3.77,CHI,,Number,2,mean 
+Employee Engagement,FY19,TBD,3.91,Arkansas,,Number,2,mean 
+Employee Engagement,FY19,TBD,3.70,Fargo ,,Number,2,mean 
+Employee Engagement,FY19,TBD,3.82,Kentucky,,Number,2,mean 
+Employee Engagement,FY19,TBD,3.80,Nebraska,,Number,2,mean 
+Employee Engagement,FY19,TBD,3.69,Ohio Trinity,,Number,2,mean 
+Employee Engagement,FY19,TBD,3.69,Pacific Northwest,,Number,2,mean 
+Employee Engagement,FY19,TBD,3.94,Tennessee,,Number,2,mean 
+Employee Engagement,FY19,TBD,3.69,Texas,,Number,2,mean 
+Physician Engagement,FY19,TBD,3.82,CHI,,Number,3,percentile 
+Physician Engagement,FY19,TBD,4.02,Arkansas,,Number,3,percentile 
+Physician Engagement,FY19,TBD,3.26,Fargo ,,Number,3,percentile 
+Physician Engagement,FY19,TBD,3.92,Kentucky,,Number,3,percentile 
+Physician Engagement,FY19,TBD,3.78,Nebraska,,Number,3,percentile 
+Physician Engagement,FY19,TBD,4.06,Ohio Trinity,,Number,3,percentile 
+Physician Engagement,FY19,TBD,3.72,Pacific Northwest,,Number,3,percentile 
+Physician Engagement,FY19,TBD,4.10,Tennessee,,Number,3,percentile 
+Physician Engagement,FY19,TBD,3.93,Texas,,Number,3,percentile 
+Quality ,11/2017-10/2018,61.8,75,CHI,,Number,4,percentile
+Quality ,11/2017-10/2018,60.3,75,Arkansas,,Number,4,percentile
+Quality ,11/2017-10/2018,62.4,75,Fargo ,,Number,4,percentile
+Quality ,11/2017-10/2018,68.4,75,Kentucky,,Number,4,percentile
+Quality ,11/2017-10/2018,62.2,75,Nebraska,,Number,4,percentile
+Quality ,11/2017-10/2018,36.6,75,Ohio Trinity,,Number,4,percentile
+Quality ,11/2017-10/2018,57.1,75,Pacific Northwest,,Number,4,percentile
+Quality ,11/2017-10/2018,58.2,75,Tennessee,,Number,4,percentile
+Quality ,11/2017-10/2018,62.7,75,Texas,,Number,4,percentile
+Patient Experience,11/2017-10/2018,39.0,75,CHI,,Number,5
+Patient Experience,11/2017-10/2018,27.3,75,Arkansas,,Number,5
+Patient Experience,11/2017-10/2018,57.8,75,Fargo ,,Number,5
+Patient Experience,11/2017-10/2018,47.7,75,Kentucky,,Number,5
+Patient Experience,11/2017-10/2018,42.2,75,Nebraska,,Number,5
+Patient Experience,11/2017-10/2018,38.5,75,Ohio Trinity,,Number,5
+Patient Experience,11/2017-10/2018,29.1,75,Pacific Northwest,,Number,5
+Patient Experience,11/2017-10/2018,68.8,75,Tennessee,,Number,5
+Patient Experience,11/2017-10/2018,43.6,75,Texas,,Number,5
+Safety,11/2017-10/2018,60.9,75,CHI,,Number,6,percentile
+Safety,11/2017-10/2018,63.3,75,Arkansas,,Number,6,percentile
+Safety,11/2017-10/2018,72.0,75,Fargo ,,Number,6,percentile
+Safety,11/2017-10/2018,44.9,75,Kentucky,,Number,6,percentile
+Safety,11/2017-10/2018,61.9,75,Nebraska,,Number,6,percentile
+Safety,11/2017-10/2018,48.4,75,Ohio Trinity,,Number,6,percentile
+Safety,11/2017-10/2018,65.5,75,Pacific Northwest,,Number,6,percentile
+Safety,11/2017-10/2018,29.1,75,Tennessee,,Number,6,percentile
+Safety,11/2017-10/2018,65.1,75,Texas,,Number,6,percentile
+Growth,FY19 YTD December,0.9,2.0,CHI,,Percent,7,of NPSR
+Growth,FY19 YTD December,4.2,6.4,Arkansas,,Percent,7,of NPSR
+Growth,FY19 YTD December,-3.8,3.7,Fargo ,,Percent,7,of NPSR
+Growth,FY19 YTD December,-6.0,-2.0,Kentucky,,Percent,7,of NPSR
+Growth,FY19 YTD December,-0.8,3.3,Nebraska,,Percent,7,of NPSR
+Growth,FY19 YTD December,3.6,4.1,Pacific Northwest,,Percent,7,of NPSR
+Growth,FY19 YTD December,5.9,2.5,Tennessee,,Percent,7,of NPSR
+Growth,FY19 YTD December,11.0,6.7,Texas,,Percent,7,of NPSR
+Transformation,FY19,TBD,TBD,CHI,,Number,8,TBD
+Transformation,FY19,TBD,TBD,Arkansas,,Number,8,TBD
+Transformation,FY19,TBD,TBD,Fargo ,,Number,8,TBD
+Transformation,FY19,TBD,TBD,Kentucky,,Number,8,TBD
+Transformation,FY19,TBD,TBD,Nebraska,,Number,8,TBD
+Transformation,FY19,TBD,TBD,Ohio Trinity,,Number,8,TBD
+Transformation,FY19,TBD,TBD,Pacific Northwest,,Number,8,TBD
+Transformation,FY19,TBD,TBD,Tennessee,,Number,8,TBD
+Transformation,FY19,TBD,TBD,Texas,,Number,8,TBD
+Operating EBIDA,FY19 YTD December,6.4,8.0,CHI,,Percent,9,of Gross Revenue
+Operating EBIDA,FY19 YTD December,-4.3,2.5,Arkansas,,Percent,9,of Gross Revenue
+Operating EBIDA,FY19 YTD December,5.2,10.3,Fargo ,,Percent,9,of Gross Revenue
+Operating EBIDA,FY19 YTD December,9.2,8.8,Kentucky,,Percent,9,of Gross Revenue
+Operating EBIDA,FY19 YTD December,7.9,10.7,Nebraska,,Percent,9,of Gross Revenue
+Operating EBIDA,FY19 YTD December,9.1,11.3,Pacific Northwest,,Percent,9,of Gross Revenue
+Operating EBIDA,FY19 YTD December,8.6,10.4,Tennessee,,Percent,9,of Gross Revenue
+Operating EBIDA,FY19 YTD December,6.7,7.5,Texas,,Percent,9,of Gross Revenue
