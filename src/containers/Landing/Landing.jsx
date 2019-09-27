@@ -12,7 +12,7 @@ class landing extends Component {
                     <section className="landing-page">
                         <p className="landing-text">Discover what we can do</p>
                         <div className="landing-info">
-                            <a href="/content" className="cta">View Content</a>
+                            <a href="/content" className="cta">View Articles</a>
                         </div>
                         <img className="landing-image" src={bgImage} alt=""/>
                     </section>
