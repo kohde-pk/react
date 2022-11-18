@@ -22,7 +22,7 @@
     "react-markdown": "^4.1.0",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",
+    "react-scripts": "5.0.1",
     "react-web-notification": "^0.6.1",
     "styled-components": "^4.2.0"
   },
